@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .bg-main {
+    @apply bg-[url(/bg-main-mobile.png)] lg:bg-[url(/bg-main-desktop.png)] bg-[length:100%_15rem] lg:bg-[length:auto_100%] bg-no-repeat;
+  }
+
+  .form-group {
+    @apply flex flex-col;
+  }
+
+  .form-label {
+    @apply leading-none tracking-widest mb-2 uppercase text-xs sm:text-sm;
+  }
+
+  .form-input {
+    @apply px-4 py-2 rounded-lg text-lg focus:outline-none placeholder:text-neutral-light-gray border-2 border-neutral-light-gray focus:border-primary-purple focus-visible:border-primary-purple;
+  }
+  .form-input[data-invalid="true"] {
+    @apply border-primary-red;
+  }
+
+  .form-error {
+    @apply leading-none mt-2 text-sm sm:text-sm text-primary-red;
+  }
+
+  .btn {
+    @apply bg-neutral-purple text-neutral-white col-span-2 py-4 rounded-lg text-lg tracking-wider [@media(hover:hover)]:hover:enabled:bg-neutral-purple/90 transition-colors disabled:bg-neutral-purple/75 disabled:cursor-not-allowed;
+  }
+
+  .focus-ring {
+    @apply focus:outline-none focus-visible:outline-none focus-visible:ring-4 ring-offset-2 ring-neutral-purple ring-offset-neutral-white;
+  }
+}
